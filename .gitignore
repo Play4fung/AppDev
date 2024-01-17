@@ -1,5 +1,0 @@
-# Ignore venv folder
-venv/
-
-# Ignore .db files
-*.db

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit Product</h1>
+
+    <form method="post" action="{{ url_for('edit_product', product_id=product.get_product_id()) }}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{ product.get_product_name() }}" required><br>
+
+        <label for="sku">SKU:</label>
+        <input type="text" name="sku" value="{{ product.get_product_sku() }}" required><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" value="{{ product.get_product_quantity() }}" required><br>
+
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" name="price" value="{{ product.get_product_price() }}" required><br>
+
+        <label for="status">Status (Enabled/Disabled):</label>
+        <input type="text" name="status" value="{{ product.get_product_status() }}" required><br>
+
+        <label for="discount">Discount:</label>
+        <input type="number" step="0.01" name="discount" value="{{ product.get_product_discount() }}" required><br>
+
+        <label for="detail">Category:</label>
+        <input type="text" name="detail" value="{{ product.get_product_detail() }}" required><br>
+
+        <label for="thumbnail">Image:</label>
+        <input type="file" name="thumbnail" alue="{{ product.get_product_thumbnail() }} accept="image/*" required><br>
+
+        <label for="images">Image:</label>
+        <input type="file" name="images" alue="{{ product.get_product_images() }} accept="image/*" required><br>
+
+        <label for="more_detailed_images">Image:</label>
+        <input type="file" name="more_detailed_images" alue="{{ product.get_product_more_detailed_images() }} accept="image/*" required><br>
+
+        <label for="type">Category:</label>
+        <input type="text" name="type" value="{{ product.get_product_type() }}" required><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
